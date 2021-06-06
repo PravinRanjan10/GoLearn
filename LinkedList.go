@@ -66,11 +66,11 @@ func CountLength(head *Node) int {
 	return count
 }
 
-func CountLengthRecursively(head *Node) int {
+func CountLengthRecursive(head *Node) int {
 	if head == nil {
 		return 0
 	} else {
-		return CountLength(head.next) + 1
+		return CountLengthRecursive(head.next) + 1
 	}
 }
 
@@ -187,7 +187,7 @@ func main() {
 	fmt.Println("count =:", CountLength(head))
 
 	fmt.Println("Find the length of LinkedList recursively")
-	fmt.Println("count =:", CountLengthRecursively(head))
+	fmt.Println("count =:", CountLengthRecursive(head))
 
 	fmt.Println("Find the total sum of LinkedList")
 	fmt.Println("Sum =:", FindSumElements(head))
