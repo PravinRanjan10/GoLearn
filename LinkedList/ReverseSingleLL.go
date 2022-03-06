@@ -1,19 +1,3 @@
-// In SingleList: Insert a new node at end
-// 1. check head is nil then head will be new node
-// 2. Assign a new pointer as head and traverse till nil
-// 3. Insert at last
-
-// In SingleList: Insert a new node at begining
-//	1. check head is nil, then head will be new node
-//  2. Insert node at beg
-
-// In SingleList: Insert a new node at Kth position
-//  1. If pos < 1: return
-//  2. If pos ==1 : Insert at beg
-//  3. check pos > k && temp != nil
-//	4. Insert at kth pos
-//  5. if temp == nil, meaning, pos is out of index
-
 package main
 
 import "fmt"
