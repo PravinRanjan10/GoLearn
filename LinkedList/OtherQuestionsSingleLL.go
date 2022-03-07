@@ -39,7 +39,8 @@ func PrintInReverse(head *Node) {
 	fmt.Println("data:", head.data)
 }
 
-// 2nd approach, using two pointers
+// 2nd approach, using two pointers. Move 1st pointer n-node ahead and then
+// move both pointer together
 func FindNthNodeFromEnd2(head *Node, n int) {
 	if head == nil {
 		return
