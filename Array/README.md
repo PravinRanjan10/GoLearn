@@ -62,3 +62,45 @@
 #### ****************************************
 #### Slices in Golang
 #### ****************************************
+A slice is declared just like an array, but it doesn’t contain the size of the slice. So it can grow or shrink according to the requirement. 
+
+        1. Syntax:  
+
+        var my_slice[]int
+        var my_slice[]int{}
+        var my_slice[]int{1, 2, 3} 
+
+
+        2. Using make() function:
+
+        func make([]int, length, capacity)
+
+        example:
+        var my_slice_1 = make([]int, 4, 7)
+
+        var my_slice_2 = make([]int, 7)
+
+
+#### Iterate the slice:
+
+    1.  myslice := []int{1, 2, 3, 4 5, 6, 7}
+    
+        // Iterate using for loop
+        for e := 0; e < len(myslice); e++ {
+            fmt.Println(myslice[e])
+        }
+
+    2. for index, ele := range myslice {
+            fmt.Printf("Index = %d and element = %s\n", index+3, ele)
+        }
+
+    3.  for _, ele := range myslice {
+            fmt.Printf("Element = %s\n", ele)
+        }
+
+
+#### Important facts of slices:
+
+    1. var my_slice = []int{1, 2, 3, 4, 5}
+
+        println(my_slice[2:]) // {4, 5}
