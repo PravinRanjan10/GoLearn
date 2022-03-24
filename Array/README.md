@@ -6,11 +6,11 @@
 
 ##### 1. Using keyword var
 
-        Var array_name[length]Type
+        Var array_name [length]Type
 
 #### Example:
 
-         var arr1[5]int32
+         var arr1 [5]int32
 
 #### 2. Using shorthand declaration:
 
@@ -59,9 +59,9 @@ A slice is declared just like an array, but it doesn’t contain the size of the
 
         1. Syntax:  
 
-        var my_slice[]int
-        var my_slice[]int{}
-        var my_slice[]int{1, 2, 3} 
+        var my_slice []int
+        var my_slice []int{}
+        var my_slice []int{1, 2, 3} 
 
 
         2. Using make() function:
@@ -97,3 +97,23 @@ A slice is declared just like an array, but it doesn’t contain the size of the
     1. var my_slice = []int{1, 2, 3, 4, 5}
 
         println(my_slice[2:]) // {4, 5}
+        
+#### Append:
+    **Ex1:**
+    var s []int
+    s = append(s, 1)
+    printSlice(s) // [1]
+    
+    s = append(s, 2, 3, 4)
+    printSlice(s) // [1, 2, 3 ,4]
+    
+   ** Ex2:**
+    arr1 := []int32{1, 2, 3}
+    arr2 := []int32{4, 5, 6}
+    arr3 := []int32{}
+
+    arr3 = append(arr3, arr1...) // can't append more than two slices at once
+    arr3 = append(arr3, arr2...)
+
+    fmt.Println("arr3:", arr3) // [1 2 3 4 5 6]
+    
