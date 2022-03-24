@@ -99,7 +99,8 @@ A slice is declared just like an array, but it doesn’t contain the size of the
         println(my_slice[2:]) // {4, 5}
         
 #### Append:
-    **Ex1:**
+    Ex1:
+    
     var s []int
     s = append(s, 1)
     printSlice(s) // [1]
@@ -107,7 +108,8 @@ A slice is declared just like an array, but it doesn’t contain the size of the
     s = append(s, 2, 3, 4)
     printSlice(s) // [1, 2, 3 ,4]
     
-   ** Ex2:**
+    Ex2:
+   
     arr1 := []int32{1, 2, 3}
     arr2 := []int32{4, 5, 6}
     arr3 := []int32{}
