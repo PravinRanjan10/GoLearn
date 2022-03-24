@@ -8,16 +8,9 @@
 
         Var array_name[length]Type
 
-        or
-
-        var array_name[length]Typle{item1, item2, item3, ...itemN}
-
-
 #### Example:
 
          var arr1[5]int32
-
-         var arr1[5]int32{1, 2, 3, 4, 5}
 
 #### 2. Using shorthand declaration:
 
