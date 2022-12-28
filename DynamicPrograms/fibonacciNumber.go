@@ -14,17 +14,37 @@ package main
 
 import "fmt"
 
-func nThfibonacciNumber(n int) int {
+// recursive way to find nth fibonacci number
+func fib(n int) int {
 	if n == 0 || n == 1 {
 		return n
 	}
-	return nThfibonacciNumber(n-1) + nThfibonacciNumber(n-2)
+	return fib(n-1) + fib(n-2)
+}
+
+// generate nth fibonacci number using DP
+func fibUsingDP(n int) int {
+	if n == 0 || n == 1 {
+		return n
+	}
+
+	dp := make([]int, n+1)
+
+	dp[0] = 0
+	dp[1] = 1
+	for i := 2; i <= n; i++ {
+		dp[i] = dp[i-1] + dp[i-2]
+	}
+	return dp[n]
 }
 
 func main() {
-	fibNumber := nThfibonacciNumber(10)
+	fibNumber := fib(5)
 	fmt.Println("The nth fibonacci number:", fibNumber)
+	fibNumber = fibUsingDP(5)
+	fmt.Println("The nth fibonacci number using DP:", fibNumber)
 }
 
 // Output:
 // The nth fibonacci number: 55
+// The nth fibonacci number using DP: 5
