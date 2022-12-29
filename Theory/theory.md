@@ -76,4 +76,85 @@ RUN apt-get install –y nginx
 CMD [“echo”,”Image created”]
 ```
 
+## Generic in golang
+* min goVersion: 1.18
+
+* It is useful, when multiple data type can be used for same logc
+
+#### without generic
+```
+package main
+
+import "fmt"
+
+func AddInt(a, b int) int {
+	return a + b
+}
+
+func AddFloat(a, b float64) float64 {
+	return a + b
+}
+
+func main() {
+	fmt.Println(AddInt(2, 4))
+	fmt.Println(AddFloat(2.5, 4.1))
+
+}
+```
+
+#### with generic
+Example 1
+
+```
+package main
+
+import "fmt"
+
+func Add[T int | float64](a, b T) T {
+	return a + b
+}
+
+func main() {
+	fmt.Println(Add(2, 4))
+	fmt.Println(Add(2.5, 4.1))
+}
+```
+Example 2
+
+```
+package main
+
+import "fmt"
+
+type Num interface {
+	int | int8 | int32 | float64 | float32
+}
+
+func Add[T Num](a, b T) T {
+	return a + b
+}
+
+func main() {
+  fmt.Println(Add(2, 4))
+  fmt.Println(Add(2.5, 4.1))
+}
+```
+Example 3: contratins.Ordered supports all the data type(all version of signed, unsigned int, float, complex, string etc.)
+```
+package main
+
+import (
+  "fmt"
+  "golang.org/x/exp/constraints"
+  )
+
+func Add[T constraints.Ordered](a, b T) T {
+	return a + b
+}
+
+func main() {
+	fmt.Println(Add(2, 4))
+}
+```
+
 ## Kafka vs RabbitMQ
