@@ -77,6 +77,7 @@ CMD [“echo”,”Image created”]
 ```
 
 ## Generic in golang
+https://www.youtube.com/watch?v=WpTKqnfp5dY
 * min goVersion: 1.18
 
 * It is useful, when multiple data type can be used for same logc
