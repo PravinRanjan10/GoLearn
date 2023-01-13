@@ -157,5 +157,10 @@ func main() {
 	fmt.Println(Add(2, 4))
 }
 ```
+## Custom Controller
+
+Reference:
+1. https://smartkeyerror.com/Kubernetes-Informer
+2. https://medium.com/speechmatics/how-to-write-kubernetes-custom-controllers-in-go-8014c4a04235
 
 ## Kafka vs RabbitMQ
