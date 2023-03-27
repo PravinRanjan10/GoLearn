@@ -1,4 +1,28 @@
 
+## GoLang
+### What is Go
+Go is a statically typed, compiled high-level, Open source programming language designed at Google
+
+* Statically typed: Value types are defined in advance
+
+* Compiled: Code is compiled ahead of execution
+
+### Why Go
+Go tries to combine the best of C++, Java & Python
+
+* Easier syntax and faster compilation than C++
+
+* Strict typing, as in Java and C++
+
+* Better performance than Python
+
+* Built-in core features and great support for third-party code
+
+* Go is awesome for web services and apps
+
+* There may be better alternatives for , Games, desktop apps etc..
+
+
 ## What is goroutine:
 Goroutines are a further refinement of the concept of a thread. The refinement was
 so remarkable that it became a separate entity called a “goroutine” instead of a thread. In a multi-processing environment, the creation, and maintenance of a process is heavily dependent on the underlying operating system. Processes consume operating system resources and do not share them among peers. Threads, although lighter than a process due to resource sharing among peer threads, need a large stack size – almost 1 MB in size. Therefore, N number of threads means N x 1 MB, which is considerably large.
@@ -164,3 +188,57 @@ Reference:
 2. https://medium.com/speechmatics/how-to-write-kubernetes-custom-controllers-in-go-8014c4a04235
 
 ## Kafka vs RabbitMQ
+
+## Kafka:
+https://hevodata.com/learn/kafka-clusters/
+### What is apache kafka:
+* Kafka is Open source, distributed Message streaming platform that uses publish and subscriber mechanism to stream the records
+
+* Originally developed by LinkedInd and later donated to apache foundation
+
+* Kafka makes use of the Broker concept to duplicate and persist messages in a fault-tolerant manner while also separating them into subjects.
+
+* Kafka is used for creating Real-Time Streaming Data Pipelines and Streaming Applications that convert and send data from its source to its destination.
+
+### Key Features of Apache Kafka
+
+* Low latency to deliver message to consumer (up to 10ms for large data)
+
+* Seamless messaging functionality: Due to its unique ability to decouple messages and store them effectively, Kafka has the ability to publish, subscribe, and process data records in Real-Time.
+
+* High Scalability, High Fault Tolerance
+
+### Kafka Architecture
+
+Architecture Image 1:
+
+![](images/kafka1.png)
+
+Architecture Image 2:
+
+![](images/kafka2.png)
+
+
+### What is Kafka Clusters?
+
+A Kafka cluster is a system that consists of several Brokers, Topics, and Partitions for both. The key objective is to distribute workloads equally among replicas and Partitions. Kafka Clusters Architecture mainly consists of the following 5 components:
+
+* Topics:
+
+  A Kafka Topic is a Collection of Messages that belong to a given category or feed name.
+
+  In Kafka, Topics are segmented into a customizable number of sections called Partitions. Kafka Partitions allow several users to read data from the same subject at the same time.
+
+* Broker:
+
+  The Kafka Server is known as Broker, which is in charge of the Topic’s Message Storage. Each of the Kafka Clusters comprises more than one Kafka Broker to maintain load balance. However, since they are stateless, ZooKeeper is used to preserve the Kafka Clusters state.
+
+  It’s usually a good idea to consider Topic replication when constructing a Kafka system. As a result, if a Broker goes down, its Topics’ duplicates from another Broker can fix the situation.
+
+  A Topic with a Kafka Replication Factor of 2 will have one additional copy in a separate Broker. Further, the replication factor cannot exceed the entire number of Brokers accessible.
+
+* Zookeeper:
+
+  The Consumer Clients’ details and Information about the Kafka Clusters are stored in a ZooKeeper. It acts like a Master Management Node where it is in charge of managing and maintaining the Brokers, Topics, and Partitions of the Kafka Clusters.
+
+  The Zookeeper keeps track of the Brokers of the Kafka Clusters. It determines which Brokers have crashed and which Brokers have just been added to the Kafka Clusters, as well as their lifetime.
