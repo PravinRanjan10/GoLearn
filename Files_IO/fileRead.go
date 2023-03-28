@@ -71,10 +71,17 @@ func ReadFileLineByLine() {
 func main() {
 	fmt.Println("********OpenAndReadFile********")
 	OpenAndReadFile()
-	fmt.Println("********ReadFileInBytes********\n")
+	fmt.Println("********ReadFileInBytes********")
 	ReadFileInBytes()
-	fmt.Println("********ReadFileLineByLine********\n")
+	fmt.Println("********ReadFileLineByLine********")
 	ReadFileLineByLine()
 
 }
 
+/*
+Reference:
+
+1. https://medium.com/learning-the-go-programming-language/streaming-io-in-go-d93507931185
+2. https://gobyexample.com/reading-files
+3. https://gobyexample.com/reading-files
+*/
