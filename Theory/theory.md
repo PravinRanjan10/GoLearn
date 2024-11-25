@@ -31,6 +31,10 @@ Moreover, the switching of threads requires the restoration of registers, such a
 
 The advantage of goroutines is that they are not dependent on the underlying operating system; rather, they exist in the virtual space of the Go runtime. As a result, any optimization on a goroutine has a lower dependency on the platform it is running. Goroutines begin with the initial capacity of only a 2KB stack size, which is considerably low. Goroutines, along with channels, support communicating sequential process (CSP) models of concurrency, where values are passed between independent activities. These activities are – you may have guessed it – called goroutines. However, the variables, for the most part, are confined to a single activity.
 
+
+## What is Context? why do we need??
+https://medium.com/@jamal.kaksouri/the-complete-guide-to-context-in-golang-efficient-concurrency-management-43d722f6eaea
+
 ## CSI
 
 ### Interfaces:
