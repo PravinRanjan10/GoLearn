@@ -2,7 +2,7 @@ Operators
 Below is a diagram which describes various operators.
 
 
-![](Operators-In-C.png)
+![](resources/Operators-In-C.png)
 
 
 #### Left Shift (<<) Operators
@@ -23,4 +23,4 @@ Below is a diagram which describes various operators.
 
 Example: Here x&y is bitwise operator and && is logical AND operator
 
-![](BitwiseAndLogicalOperators.png)
+![](resources/BitwiseAndLogicalOperators.png)
