@@ -25,3 +25,6 @@ Below is a diagram which describes various operators.
 Example: Here x&y is bitwise operator and && is logical AND operator
 
 ![](resources/BitwiseAndLogicalOperators.png)
+
+
+### What is difference between logical operators and bitwise operators
