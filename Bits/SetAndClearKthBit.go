@@ -1,26 +1,28 @@
+// set the kth position of a given number
+// clear the kth position
+
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
-func setKthBit(n, k int) int {
-	return (1 << k) | n // left shift then OR operation
+func setkthBit(n, k int) int {
+
+	// logic of setting kth position.
+
+	x := (1 << k) | n
+	return x
 }
 
-func clearBits(n, k int) int {
-	return n & ^(1 << k) // invert then perform and operation on number
-}
+func clearKthBit(n, k int) int {
 
-func PrintIntToBinary(n int) {
-	fmt.Println("Binary of Number after clearBits:", strconv.FormatInt(int64(n), 2))
+	// logic of clear
+	y := n &^ (1 << k)
+
+	return y
 }
 
 func main() {
-	n, k := 63, 4
-	fmt.Println("Number after setBit:", setKthBit(n, k))
-	y := clearBits(n, k)
-	fmt.Println("Number after clearBits=:", y)
-	PrintIntToBinary(y)
+	fmt.Println("The number after set kth position is:", setkthBit(21, 3))
+	fmt.Println("The number after clear kth position is:", clearKthBit(21, 2))
+
 }
