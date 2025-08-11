@@ -49,7 +49,6 @@ func main() {
 		breath: 3,
 		height: 1,
 	}
-
 	fmt.Println("Circle area:", r.Area())
 
 }
