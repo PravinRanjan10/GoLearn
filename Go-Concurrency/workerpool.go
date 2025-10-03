@@ -5,6 +5,8 @@
 
 // This is helpful in batch data processing
 
+// It helps in resource management by limiting the number of goroutines and re-use them for multiple tasks
+
 package main
 
 import (
@@ -33,3 +35,5 @@ func main() {
 
 	close(jobs)
 }
+
+// One more example: https://www.youtube.com/watch?v=ZWMiKQXmh9s&t=318s
