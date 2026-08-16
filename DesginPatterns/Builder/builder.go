@@ -1,51 +1,37 @@
 package main
 
-// The NotificationBuilder has fields exported as well as a few methods
-// to demonstrate
-type NotificationBuilder struct {
-	Title    string
-	Message  string
-	Image    string
-	Icon     string
-	Priority int
-	NotType  string
+import (
+	"fmt"
+	"time"
+)
+
+type Server struct {
+	Host    string
+	IP      string
+	Port    int32
+	TLS     bool
+	TimeOut time.Duration
+	MaxConn int
 }
 
-func newNotificationBuilder() *NotificationBuilder {
-	return &NotificationBuilder{}
+type ServerBuilder struct {
+	server Server
 }
 
-func (nb *NotificationBuilder) SetTitle(title string) {
-	nb.Title = title
+func NewServerBuilder() *Server {
+	return &Server{
+		Host:    "server1",
+		IP:      "192.168.1.1",
+		Port:    80,
+		TLS:     false,
+		TimeOut: 2 * time.Millisecond,
+		MaxConn: 10,
+	}
 }
 
-func (nb *NotificationBuilder) SetMessage(message string) {
-	nb.Message = message
-}
+func main() {
 
-func (nb *NotificationBuilder) SetImage(image string) {
-	nb.Image = image
-}
+	server := NewServerBuilder()
+	fmt.Println(server)
 
-func (nb *NotificationBuilder) SetIcon(icon string) {
-	nb.Icon = icon
-}
-
-func (nb *NotificationBuilder) SetPriority(pri int) {
-	nb.Priority = pri
-}
-
-func (nb *NotificationBuilder) SetType(notType string) {
-	nb.NotType = notType
-}
-
-func (nb *NotificationBuilder) Build() (Notification, error) {
-	return Notification{
-		title:    nb.Title,
-		message:  nb.Message,
-		image:    nb.Image,
-		icon:     nb.Icon,
-		priority: nb.Priority,
-		notType:  nb.NotType,
-	}, nil
 }
