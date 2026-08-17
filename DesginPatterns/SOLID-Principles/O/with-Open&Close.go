@@ -48,3 +48,23 @@ func main() {
 	*/
 
 }
+
+/*
+If the interviewer asks "Explain Open/Closed Principle with a Go example", you can say:
+
+"OCP means a component should be open for extension but closed for modification. For example, in a payment system, instead of having a switch statement for Credit Card, UPI, and PayPal, I define a Payment interface. Each payment method implements the interface, and ProcessPayment depends only on that interface. If I need to add Apple Pay, I create a new implementation without modifying the existing payment-processing logic."
+
+The important code to remember
+type Payment interface {
+	Pay(amount float64) error
+}
+
+
+func ProcessPayment(p Payment, amount float64) error {
+	return p.Pay(amount)
+}
+
+New payment method → new implementation → no change to existing processing logic.
+
+That's the core idea of Open/Closed Principle in Go.
+*/
