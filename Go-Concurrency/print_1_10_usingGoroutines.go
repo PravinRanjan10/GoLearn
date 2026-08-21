@@ -79,3 +79,58 @@ func main() {
 // 	oddChan <- true // Start with oddFn
 // 	wg.Wait()
 // }
+
+/*
+
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func Odd(odd, even chan int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for {
+		val := <-odd
+		if val > 10 {
+			close(even)
+			return
+		}
+		fmt.Println(val)
+		even <- val + 1
+	}
+}
+
+func Even(odd, even chan int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for {
+		val, ok := <-even
+		if !ok {
+			return
+		}
+		fmt.Println(val)
+		odd <- val + 1
+	}
+}
+
+func main() {
+	fmt.Println("Hello...")
+	wg := new(sync.WaitGroup)
+
+	odd := make(chan int)
+	even := make(chan int)
+
+	wg.Add(2)
+	go Odd(odd, even, wg)
+	go Even(odd, even, wg)
+
+	odd <- 1
+
+	wg.Wait()
+
+	fmt.Println("I am done")
+
+}
+
+*/
